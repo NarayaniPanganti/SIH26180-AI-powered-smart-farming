@@ -23,17 +23,6 @@ treatment are sprayed (pesticide or supplement vessel).
 
 Training curve: `training_curve.png` - Confusion matrix: `confusion_matrix.png`
 
-## Run it
-```bash
-pip install -r requirements.txt
-# put images in dataset/<class_name>/*.jpg
-python train_model.py            # trains, writes leaf_model.h5, classes.txt, plots
-python convert_to_tflite.py      # optional: edge-ready model
-python predict.py sample_images/leaf1.jpg
-```
-If you already have `leaf_model.h5` but no `classes.txt`, create it from your dataset folders
-(alphabetical order, one per line): `ls dataset > classes.txt` (Linux/Mac) or `dir dataset /b > classes.txt` (Windows).
-
 ## Limitations / next steps
 - Trained on a limited dataset; field photos (lighting, soil, shadows) will lower accuracy until we add real farm images.
 - Next: fine-tune top MobileNetV2 layers, collect field data, link detections to GPS/RTK field-map coordinates, run on Raspberry Pi.
